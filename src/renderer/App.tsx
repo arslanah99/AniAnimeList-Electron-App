@@ -1,4 +1,9 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import { Button } from '@mui/material';
+import '@fontsource/open-sans';
+import '@fontsource/open-sans/800.css';
+import '@fontsource/open-sans/600.css';
+import { SiMyanimelist } from 'react-icons/si';
 import icon from '../../assets/icon.svg';
 import './App.css';
 
@@ -22,6 +27,14 @@ function Hello() {
             Read our docs
           </button>
         </a>
+
+        <Button
+          sx={{ fontFamily: 'Open sans', fontSize: 50, fontWeight: 900 }}
+          variant="outlined"
+        >
+          Hello there
+        </Button>
+        <SiMyanimelist style={{ fontSize: 500 }} />
         <a
           href="https://github.com/sponsors/electron-react-boilerplate"
           target="_blank"
