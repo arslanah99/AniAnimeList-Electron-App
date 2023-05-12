@@ -1,0 +1,89 @@
+.anime-list-container {
+    height: 100vh;
+    overflow: scroll;
+    padding: 70px 20px 20px 20px;
+    background: linear-gradient(to right bottom, #fd297b, #ff5864);
+  }
+  
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .anime-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .anime-item {
+    flex: 0 0 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .anime-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .anime-item:active {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transform: translateY(1px);
+  }
+  
+  .anime-item:focus {
+    outline: none;
+  }
+  
+  .anime-images-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .anime-image {
+    width: 200px;
+    height: 280px; 
+    margin: 10px;
+    border-radius: 8px;
+    object-fit: cover; 
+  }
+  
+  .anime-item .MuiCardContent-root {
+    padding-bottom: 16px !important;
+    flex: 1;
+  }
+  
+  .anime-item .MuiTypography-root {
+    color: #333;
+    flex: 1;
+  }
+  
+  .anime-item .MuiTypography-gutterBottom {
+    margin-bottom: 8px !important;
+  }
+  .anime-item {
+  /* Existing styles */
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 300px; /* Set the initial max height */
+}
+
+.anime-description {
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.anime-item.expanded {
+  max-height: 600px; /* Set the expanded max height */
+}
+
+.anime-description.expanded {
+  max-height: 500px; /* Set the expanded max height */
+}
