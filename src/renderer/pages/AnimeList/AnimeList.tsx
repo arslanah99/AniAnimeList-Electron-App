@@ -5,20 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import './AnimeList.css';
-
-const allAnimeUrl = 'https://api.jikan.moe/v4/anime';
-const getAllAnime = async () => {
-  const response = await axios.get(allAnimeUrl);
-  return response.data;
-};
-
-export const UseGetAllAnime = () => {
-  const { isLoading, data } = useQuery(['allAnime'], getAllAnime);
-  return { data, isLoading };
-};
+import { UseGetAllAnime } from 'queries/AnimeQueries';
 
 export function AnimeList() {
   const { data, isLoading } = UseGetAllAnime();
