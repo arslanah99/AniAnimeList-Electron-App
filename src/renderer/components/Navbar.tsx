@@ -1,5 +1,6 @@
 import {
   AppBar,
+  Button,
   Drawer,
   IconButton,
   List,
@@ -11,10 +12,10 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaHamburger } from 'react-icons/fa';
+import { FaHamburger, FaSun, FaMoon } from 'react-icons/fa';
 
 // eslint-disable-next-line import/prefer-default-export
-export function Navbar() {
+export function Navbar({ toggleTheme, isDarkMode }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -38,6 +39,15 @@ export function Navbar() {
           <Typography>Anime List</Typography>
         </IconButton>
       </NavLink>
+      {isDarkMode ? (
+        <Button onClick={toggleTheme}>
+          <FaSun style={{ color: 'yellow' }} />
+        </Button>
+      ) : (
+        <Button onClick={toggleTheme} style={{ color: 'blue' }}>
+          <FaMoon />
+        </Button>
+      )}
     </>
   );
 
