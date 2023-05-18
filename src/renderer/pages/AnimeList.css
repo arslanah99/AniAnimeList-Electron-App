@@ -21,26 +21,3 @@
     margin: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
-  
-  .anime-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  .anime-item-content {
-    padding: 10px;
-  }
-  
-  .anime-item-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .anime-item-description {
-    font-size: 14px;
-    height: 60px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  

@@ -1,19 +1,20 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import './AnimeList.css';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from '@mui/material';
 import { UseGetAllAnime } from 'queries/AnimeQueries';
+import './AnimeList.css';
 
 // eslint-disable-next-line import/prefer-default-export
 export function AnimeList() {
   const { data, isLoading } = UseGetAllAnime();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div>loading...</div>;
   }
 
   return (
@@ -22,9 +23,9 @@ export function AnimeList() {
       <div className="anime-items-container">
         {data?.data?.map((anime) => (
           <Card
+            className="anime-item"
             key={anime.mal_id}
             sx={{ maxWidth: 345 }}
-            className="anime-item"
           >
             <CardMedia
               component="img"
@@ -32,7 +33,7 @@ export function AnimeList() {
               alt={anime.title}
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+              <Typography gutterBottom variant="h5">
                 {anime.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">
@@ -40,7 +41,7 @@ export function AnimeList() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Learn More</Button>
+              <Button size="small">Expand Anime</Button>
             </CardActions>
           </Card>
         ))}
